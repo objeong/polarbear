@@ -1,0 +1,129 @@
+##########################################################################################
+#
+# Script given to Oliver to start investigating ground pickup systematics
+# Author: Neil Goeckner-Wald
+# ngoecknerwald@berkeley.edu
+#
+##########################################################################################
+
+#TODO: Will run this fully on NERSC, need to tune and update wall times for each stage
+
+# Set mode to be either Cori or Gordita
+computer='gordita'
+#computer='cori'
+
+#Pipeline one: run the null spectrum mapmaker and go to null power spectra
+mode='nullmap'
+#mode='nullcoadd'
+#mode='nullcoaddfinal'
+#mode='nulltofull'
+
+basedir="$SCRATCH/largepatch_null/groundmap_using_null_split"
+
+# Machine-dependent parameters 
+if [ $computer == 'gordita' ]
+then
+	hdf5loc="/data/pb1/neil/hdf5_ces_dmds/"
+	mpiargs="--parmode mpi_edison -n 1 --mppwidth 32 --nodes 1 --ppn 32 \
+			--queue regular --walltime 00:59:00"
+fi
+
+if [ $computer == 'cori' ]
+then
+	hdf5loc="$SCRATCH/largepatch2/hdf5_ces_dmds"
+	mpiargs="--parmode mpi_edison -n 10 --mppwidth 128 --nodes 8 --ppn 16 \
+			--queue regular --walltime 00:59:00"
+fi
+
+#Mapmaking files
+gain="$SCRATCH/largepatch2/gain"
+psdloc="$SCRATCH/largepatch2/low_freq_epsilon"
+filterfolder="$SCRATCH/largepatch2/filterdb_zeta"
+nullfolder="$SCRATCH/null_test_flags_zeta"
+dataselection="$SCRATCH/largepatch2/full_flag_zeta"
+
+#Free parameters
+firstgreg="20140725_000000"
+lastgreg="2014082520161008_000000" 
+#NOTE for Oliver and Kolen,
+# different from the fiducial pipeline in that we have added the --groundmap argument to keep only the ground synchronous signal
+# and that we have changed the pointing arguments to give us a healpix map in ground coordinates
+filterargs="--detrend 2 --removeleakage_pca --leak_fmax 0.4 --groundtemplate 0.08 --groundmap\
+	--nofft --poly 1 --polpoly 1 --commonmode --commonmode_deweight --lpf 1.2"
+projectionargs='--ground_coord --width 180 180 90 90 --healpix_offset Ground --healpix 256'
+#projectionargs='--width 80.0 --fixed_offset BICEP --pixelsize 10.0'
+mapsplits="--mapsplits FIFTH_SEPARATE FOURTH_SEPARATE THIRD_SEPARATE RS_MIDDLE RM_SET \
+			SM_RISE LR_SUBSCAN GAIN_BY_CES PWV SUN_HORIZON AMP_2F_BY_BOLO AMP_4F_BY_BOLO \
+			STACK_Q_FKNEE STACK_U_FKNEE"
+
+#Real data null map call function
+function run_null_mapmaker() {
+
+	out=$1
+	otherflags=$2	
+
+	python $ABPATH/whwp/process_field_whwp.py mapbolo_whwp -o ${basedir}/${out} -f $hdf5loc \
+	 --firstgreg $firstgreg --lastgreg $lastgreg --psd_folder $psdloc --gain_folder $gain \
+	 $projectionargs --singleblock $filterargs $mpiargs --alt_flag_folder $dataselection $otherflags \
+	 --filterfolder $filterfolder --null_folder $nullfolder
+}
+
+#############################################################################################
+#
+#
+# Four cases for running the null test pipeline
+#
+#
+#############################################################################################
+
+if [ $mode == 'nullmap' ]
+then
+	run_null_mapmaker real_data_nullmap "$mapsplits"
+fi
+
+
+if [ $mode == 'nullcoadd' ]
+then
+
+	#first stage coadding
+	#real data
+	python $ABPATH/whwp/process_field_whwp.py coadd_hdf5_whwp -f $basedir/real_data_nullmap \
+	--name realmap --mppwidth 64 --nodes 2 --ppn 32 --walltime 00:20:00 --queue regular \
+	--parmode mpi_edison -n 1 --save_separate $mapsplits
+
+
+fi
+
+if [ $mode == 'nullcoaddfinal' ]
+then
+
+	#final coadd for the null test splits, running on real data
+	python $ABPATH/whwp/coadd_hdf5_whwp.py --field $basedir/real_data_nullmap--name realmap \
+	--coaddfinally --save_separate --load_separate $mapsplits
+
+fi
+
+#############################################################################################
+#
+#
+# Quick shortcut step for when we want to move from a null test map set to a full coadd to get
+# fiducial error bars for free
+# 
+#
+#############################################################################################
+
+if [ $mode == 'nulltofull' ]
+then
+
+	mkdir real_data_fullmap
+
+	#use LR_SUBSCAN because we know this will exist for both of them
+	for pair in $basedir/real_data_nullmap/201*/coadd $basedir/real_data_nullmap/coadd;
+	do
+		echo "python combine_splits.py --mapfolder $g --map0 ${pair}/realmap_LR_SUBSCAN_0.hdf5 \ 
+		--map1 ${pair}/realmap_LR_SUBSCAN_0.hdf5 --out ${pair/nullmap/fullmap}/realmap.hdf5"
+	done
+
+fi
+
+

@@ -1,0 +1,290 @@
+Last login: Tue Jul 18 13:13:17 on ttys000
+Olivers-MacBook-Pro:~ objeong$ ssh -Y objeong@gordita.berkeley.edu
+ssh: Could not resolve hostname gordita.berkeley.edu: nodename nor servname provided, or not known
+Olivers-MacBook-Pro:~ objeong$ ssh -Y objeong@gordita.physics.berkeley.edu
+The authenticity of host 'gordita.physics.berkeley.edu (128.32.240.138)' can't be established.
+RSA key fingerprint is SHA256:U0UIquAQHzG4i0vUPykcmTh0aQwqw+8s4MTBxDmQZyQ.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'gordita.physics.berkeley.edu,128.32.240.138' (RSA) to the list of known hosts.
+objeong@gordita.physics.berkeley.edu's password: 
+Permission denied, please try again.
+objeong@gordita.physics.berkeley.edu's password: 
+Permission denied, please try again.
+objeong@gordita.physics.berkeley.edu's password: 
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+Olivers-MacBook-Pro:~ objeong$ Oliver_jeong1991
+-bash: Oliver_jeong1991: command not found
+Olivers-MacBook-Pro:~ objeong$ ssh -Y OliverJeong@gordita.physics.berkeley.edu
+OliverJeong@gordita.physics.berkeley.edu's password: 
+Permission denied, please try again.
+OliverJeong@gordita.physics.berkeley.edu's password: 
+Permission denied, please try again.
+OliverJeong@gordita.physics.berkeley.edu's password: 
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+Olivers-MacBook-Pro:~ objeong$ ssh -Y objeong@gordita.physics.berkeley.edu
+objeong@gordita.physics.berkeley.edu's password: 
+Permission denied, please try again.
+objeong@gordita.physics.berkeley.edu's password: 
+Permission denied, please try again.
+objeong@gordita.physics.berkeley.edu's password: 
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+Olivers-MacBook-Pro:~ objeong$ ls
+Applications	Desktop		Downloads	Library		Music		Public		notes
+Calibre Library	Documents	Dropbox		Movies		Pictures	anaconda
+Olivers-MacBook-Pro:~ objeong$ oliverjeong@gordita.physics.berkeley.edu
+-bash: oliverjeong@gordita.physics.berkeley.edu: command not found
+Olivers-MacBook-Pro:~ objeong$ ssh -Y oliverjeong@gordita.physics.berkeley.edu
+oliverjeong@gordita.physics.berkeley.edu's password: 
+Warning: No xauth data; using fake authentication data for X11 forwarding.
+Welcome to gordita!
+
+Notable file systems:
+- /data/pb1 contains PB1 data
+- /scratch contains fast local scratch space (3TB worth)
+- /home Home directories. Please don't put a ton of data here. /home is backed up daily -- old data can be found at /home/.zfs/snapshot/date
+- /opt contains interesting software, notably in /opt/polarbear, which has python and useful python modules
+
+oliverjeong@gordita:~$ ls
+examples.desktop
+oliverjeong@gordita:~$ git clone oliverjeong@bolowiki.berkeley.edu:/pbrepo/AnalysisBackend
+Initialized empty Git repository in /home/oliverjeong/AnalysisBackend/.git/
+The authenticity of host 'bolowiki.berkeley.edu (128.32.240.254)' can't be established.
+RSA key fingerprint is 1b:8f:01:46:0c:9c:0d:6d:14:d7:f8:11:66:36:49:a9.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'bolowiki.berkeley.edu,128.32.240.254' (RSA) to the list of known hosts.
+Password: 
+remote: Counting objects: 27021, done.
+remote: Compressing objects: 100% (9367/9367), done.
+remote: Total 27021 (delta 19576), reused 24458 (delta 17567)
+Receiving objects: 100% (27021/27021), 10.18 MiB | 10.95 MiB/s, done.
+Resolving deltas: 100% (19576/19576), done.
+oliverjeong@gordita:~$ ls
+AnalysisBackend  examples.desktop
+oliverjeong@gordita:~$ cd analysisbackend
+-sh: cd: analysisbackend: No such file or directory
+oliverjeong@gordita:~$ cd AnalysisBackend
+oliverjeong@gordita:~/AnalysisBackend$ ls
+antiquated   config       forecast  __init__.py  misc      pipelet    pointsource    quaternionarray  simulation  unpack
+automated    CosmicLenz   hdf5      mapcov       mpibatch  plotutils  powerspectrum  resample         test        weather
+calibration  deglitching  indexing  mapping      noise     pointing   pywtl_modules  setup            timestream  whwp
+oliverjeong@gordita:~/AnalysisBackend$ cd
+oliverjeong@gordita:~$ ls
+AnalysisBackend  examples.desktop
+oliverjeong@gordita:~$ ls -al
+total 163
+drwxr-xr-x.  5 oliverjeong oliverjeong   16 Jul 21 15:28 .
+drwxr-xr-x. 77 root        root          77 Jul  6 14:59 ..
+drwxr-xr-x. 32 oliverjeong oliverjeong   34 Jul 21 15:28 AnalysisBackend
+-rw-------.  1 oliverjeong oliverjeong   79 May  6  2015 .bash_history
+-rw-r--r--.  1 oliverjeong oliverjeong  220 Dec 19  2014 .bash_logout
+-rw-r--r--.  1 oliverjeong oliverjeong 3103 Dec 19  2014 .bashrc
+drwx------.  2 oliverjeong oliverjeong    3 Dec 22  2014 .cache
+-rw-r--r--.  1 oliverjeong oliverjeong 1066 Oct 11  2015 .cshrc
+-rw-r--r--.  1 oliverjeong oliverjeong  179 Dec 19  2014 examples.desktop
+-rw-------.  1 oliverjeong oliverjeong  379 Oct 11  2015 .mail_aliases
+-rw-r--r--.  1 oliverjeong oliverjeong  336 Oct 11  2015 .mailrc
+-rw-r--r--.  1 oliverjeong oliverjeong  675 Dec 19  2014 .profile
+-rw-------.  1 oliverjeong oliverjeong  281 Oct 11  2015 .rhosts
+-rw-r--r--.  1 oliverjeong oliverjeong  978 Oct 11  2015 .shrc
+drwx------.  2 oliverjeong oliverjeong    3 May  6  2015 .ssh
+-rw-------.  1 oliverjeong oliverjeong  128 Jul 21 15:26 .Xauthority
+oliverjeong@gordita:~$ ls
+AnalysisBackend  examples.desktop
+oliverjeong@gordita:~$ cd AnalysisBackend
+oliverjeong@gordita:~/AnalysisBackend$ ls
+antiquated   config       forecast  __init__.py  misc      pipelet    pointsource    quaternionarray  simulation  unpack
+automated    CosmicLenz   hdf5      mapcov       mpibatch  plotutils  powerspectrum  resample         test        weather
+calibration  deglitching  indexing  mapping      noise     pointing   pywtl_modules  setup            timestream  whwp
+oliverjeong@gordita:~/AnalysisBackend$ git status
+# On branch master
+nothing to commit (working directory clean)
+oliverjeong@gordita:~/AnalysisBackend$ cd
+oliverjeong@gordita:~$ cd AnalysisBackend
+oliverjeong@gordita:~/AnalysisBackend$ ls
+antiquated   config       forecast  __init__.py  misc      pipelet    pointsource    quaternionarray  simulation  unpack
+automated    CosmicLenz   hdf5      mapcov       mpibatch  plotutils  powerspectrum  resample         test        weather
+calibration  deglitching  indexing  mapping      noise     pointing   pywtl_modules  setup            timestream  whwp
+oliverjeong@gordita:~/AnalysisBackend$ git checkout
+oliverjeong@gordita:~/AnalysisBackend$ git checkout cleanup
+Branch cleanup set up to track remote branch cleanup from origin.
+Switched to a new branch 'cleanup'
+oliverjeong@gordita:~/AnalysisBackend$ git status
+# On branch cleanup
+nothing to commit (working directory clean)
+oliverjeong@gordita:~/AnalysisBackend$ logout
+Connection to gordita.physics.berkeley.edu closed.
+Olivers-MacBook-Pro:~ objeong$ ssh -Y oliverjeong@gordita.physics.berkeley.edu
+oliverjeong@gordita.physics.berkeley.edu's password: 
+Warning: No xauth data; using fake authentication data for X11 forwarding.
+Last login: Fri Jul 21 15:26:53 2017 from 10.142.100.209
+Welcome to gordita!
+
+Notable file systems:
+- /data/pb1 contains PB1 data
+- /scratch contains fast local scratch space (3TB worth)
+- /home Home directories. Please don't put a ton of data here. /home is backed up daily -- old data can be found at /home/.zfs/snapshot/date
+- /opt contains interesting software, notably in /opt/polarbear, which has python and useful python modules
+
+oliverjeong@gordita:~$ ls
+AnalysisBackend  examples.desktop
+oliverjeong@gordita:~$ cd AnalysisBackend/
+oliverjeong@gordita:~/AnalysisBackend$ git status
+# On branch cleanup
+nothing to commit (working directory clean)
+oliverjeong@gordita:~/AnalysisBackend$ ls -al
+total 442
+drwxr-xr-x. 32 oliverjeong oliverjeong  34 Jul 21 15:28 .
+drwxr-xr-x.  5 oliverjeong oliverjeong  16 Jul 21 15:35 ..
+drwxrwxr-x. 36 oliverjeong oliverjeong  63 Jul 21 15:28 antiquated
+drwxrwxr-x.  2 oliverjeong oliverjeong  22 Jul 21 15:28 automated
+drwxrwxr-x.  5 oliverjeong oliverjeong  41 Jul 21 15:28 calibration
+drwxrwxr-x.  2 oliverjeong oliverjeong   6 Jul 21 15:28 config
+drwxrwxr-x.  3 oliverjeong oliverjeong   4 Jul 21 15:28 CosmicLenz
+drwxrwxr-x.  2 oliverjeong oliverjeong  21 Jul 21 15:28 deglitching
+drwxrwxr-x.  2 oliverjeong oliverjeong   3 Jul 21 15:28 forecast
+drwxrwxr-x.  8 oliverjeong oliverjeong  13 Jul 21 15:34 .git
+-rw-rw-r--.  1 oliverjeong oliverjeong 177 Jul 21 15:28 .gitignore
+drwxrwxr-x.  2 oliverjeong oliverjeong  44 Jul 21 15:34 hdf5
+drwxrwxr-x.  2 oliverjeong oliverjeong  22 Jul 21 15:28 indexing
+-rw-rw-r--.  1 oliverjeong oliverjeong 396 Jul 21 15:28 __init__.py
+drwxrwxr-x.  2 oliverjeong oliverjeong   3 Jul 21 15:28 mapcov
+drwxrwxr-x.  2 oliverjeong oliverjeong  39 Jul 21 15:34 mapping
+drwxrwxr-x.  4 oliverjeong oliverjeong  26 Jul 21 15:34 misc
+drwxrwxr-x.  3 oliverjeong oliverjeong   3 Jul 21 15:28 mpibatch
+drwxrwxr-x.  2 oliverjeong oliverjeong  29 Jul 21 15:28 noise
+drwxrwxr-x.  5 oliverjeong oliverjeong  47 Jul 21 15:28 pipelet
+drwxrwxr-x.  2 oliverjeong oliverjeong   7 Jul 21 15:28 plotutils
+drwxrwxr-x.  2 oliverjeong oliverjeong  17 Jul 21 15:28 pointing
+drwxrwxr-x.  2 oliverjeong oliverjeong  11 Jul 21 15:28 pointsource
+drwxrwxr-x.  3 oliverjeong oliverjeong  41 Jul 21 15:34 powerspectrum
+drwxrwxr-x.  2 oliverjeong oliverjeong   5 Jul 21 15:28 pywtl_modules
+drwxrwxr-x.  2 oliverjeong oliverjeong   5 Jul 21 15:28 quaternionarray
+drwxrwxr-x.  2 oliverjeong oliverjeong   3 Jul 21 15:28 resample
+drwxrwxr-x.  2 oliverjeong oliverjeong   4 Jul 21 15:28 setup
+drwxrwxr-x.  2 oliverjeong oliverjeong  12 Jul 21 15:28 simulation
+drwxrwxr-x.  2 oliverjeong oliverjeong  19 Jul 21 15:28 test
+drwxrwxr-x.  2 oliverjeong oliverjeong   4 Jul 21 15:28 timestream
+drwxrwxr-x.  2 oliverjeong oliverjeong  30 Jul 21 15:34 unpack
+drwxrwxr-x.  2 oliverjeong oliverjeong   7 Jul 21 15:28 weather
+drwxrwxr-x.  2 oliverjeong oliverjeong  66 Jul 21 15:34 whwp
+oliverjeong@gordita:~/AnalysisBackend$ cd
+oliverjeong@gordita:~$ mkdir -p analysis_data
+oliverjeong@gordita:~$ ls
+AnalysisBackend  analysis_data  examples.desktop
+oliverjeong@gordita:~$ ls -l
+total 29
+drwxr-xr-x. 32 oliverjeong oliverjeong  34 Jul 21 15:28 AnalysisBackend
+drwxrwxr-x.  2 oliverjeong oliverjeong   2 Jul 21 15:38 analysis_data
+-rw-r--r--.  1 oliverjeong oliverjeong 179 Dec 19  2014 examples.desktop
+oliverjeong@gordita:~$ chmod 777 analysis_data/
+oliverjeong@gordita:~$ ls
+AnalysisBackend  analysis_data  examples.desktop
+oliverjeong@gordita:~$ ls -l
+total 29
+drwxr-xr-x. 32 oliverjeong oliverjeong  34 Jul 21 15:28 AnalysisBackend
+drwxrwxrwx.  2 oliverjeong oliverjeong   2 Jul 21 15:38 analysis_data
+-rw-r--r--.  1 oliverjeong oliverjeong 179 Dec 19  2014 examples.desktop
+oliverjeong@gordita:~$ cd analysis_data/
+oliverjeong@gordita:~/analysis_data$ ls
+2013-08-07_jupiter_postF2F_bls_repack.pkl  archive_table_stripped.pkl  calib_table_temp              schedule_table      stimcatalog.txt
+archive_table                              cal                         continuous_stim               schedule_table.pkl
+archive_table.pkl                          calib_table                 old_archive_table_largepatch  SPP_first_run
+oliverjeong@gordita:~/analysis_data$ ls
+2013-08-07_jupiter_postF2F_bls_repack.pkl  archive_table_stripped.pkl  calib_table_temp              schedule_table      stimcatalog.txt
+archive_table                              cal                         continuous_stim               schedule_table.pkl
+archive_table.pkl                          calib_table                 old_archive_table_largepatch  SPP_first_run
+oliverjeong@gordita:~/analysis_data$ ls
+2013-08-07_jupiter_postF2F_bls_repack.pkl  archive_table_stripped.pkl  calib_table_temp              schedule_table      stimcatalog.txt
+archive_table                              cal                         continuous_stim               schedule_table.pkl
+archive_table.pkl                          calib_table                 old_archive_table_largepatch  SPP_first_run
+oliverjeong@gordita:~/analysis_data$ cd
+oliverjeong@gordita:~$ cd .local/bin/
+-sh: cd: .local/bin/: No such file or directory
+oliverjeong@gordita:~$ mkdir -p
+mkdir: missing operand
+Try `mkdir --help' for more information.
+oliverjeong@gordita:~$ mkdir -p .local#/bin
+oliverjeong@gordita:~$ ls
+AnalysisBackend  analysis_data  examples.desktop
+oliverjeong@gordita:~$ ls -a
+.   AnalysisBackend  .bash_history  .bashrc  .cshrc            .local#        .mailrc   .rhosts  .ssh
+..  analysis_data    .bash_logout   .cache   examples.desktop  .mail_aliases  .profile  .shrc    .Xauthority
+oliverjeong@gordita:~$ cd .local#/bin
+oliverjeong@gordita:~/.local#/bin$ ls
+oliverjeong@gordita:~/.local#/bin$ rm -r ./local#
+rm: cannot remove `./local#': No such file or directory
+oliverjeong@gordita:~/.local#/bin$ cd
+oliverjeong@gordita:~$ rm -r ./local#
+rm: cannot remove `./local#': No such file or directory
+oliverjeong@gordita:~$ ls -a
+.   AnalysisBackend  .bash_history  .bashrc  .cshrc            .local#        .mailrc   .rhosts  .ssh
+..  analysis_data    .bash_logout   .cache   examples.desktop  .mail_aliases  .profile  .shrc    .Xauthority
+oliverjeong@gordita:~$ rm -r './local#'
+rm: cannot remove `./local#': No such file or directory
+oliverjeong@gordita:~$ rm -r .local#/
+oliverjeong@gordita:~$ cd .local
+-sh: cd: .local: No such file or directory
+oliverjeong@gordita:~$ mkdir -p .local/bin
+oliverjeong@gordita:~$ cd .local/bin/
+oliverjeong@gordita:~/.local/bin$ wget httpsL//github.com/ickc/POLARBEAR-scripts/raw/master/bin/env.sh
+--2017-07-21 15:52:37--  http://httpsl//github.com/ickc/POLARBEAR-scripts/raw/master/bin/env.sh
+Resolving httpsl... failed: Name or service not known.
+wget: unable to resolve host address “httpsl”
+oliverjeong@gordita:~/.local/bin$ wget https://github.com/ickc/POLARBEAR-scripts/raw/master/bin/env.sh
+--2017-07-21 15:52:45--  https://github.com/ickc/POLARBEAR-scripts/raw/master/bin/env.sh
+Resolving github.com... 192.30.255.112, 192.30.255.113
+Connecting to github.com|192.30.255.112|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/ickc/POLARBEAR-scripts/master/bin/env.sh [following]
+--2017-07-21 15:52:46--  https://raw.githubusercontent.com/ickc/POLARBEAR-scripts/master/bin/env.sh
+Resolving raw.githubusercontent.com... 151.101.40.133
+Connecting to raw.githubusercontent.com|151.101.40.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3562 (3.5K) [text/plain]
+Saving to: “env.sh”
+
+100%[============================================================================================================>] 3,562       --.-K/s   in 0s      
+
+2017-07-21 15:52:46 (80.6 MB/s) - “env.sh” saved [3562/3562]
+
+oliverjeong@gordita:~/.local/bin$ ls
+env.sh
+oliverjeong@gordita:~/.local/bin$ ls -al
+total 2
+drwxrwxr-x. 2 oliverjeong oliverjeong    3 Jul 21 15:52 .
+drwxrwxr-x. 3 oliverjeong oliverjeong    3 Jul 21 15:52 ..
+-rw-rw-r--. 1 oliverjeong oliverjeong 3562 Jul 21 15:52 env.sh
+oliverjeong@gordita:~/.local/bin$ chmod +x env.sh 
+oliverjeong@gordita:~/.local/bin$ ls -l
+total 10
+-rwxrwxr-x. 1 oliverjeong oliverjeong 3562 Jul 21 15:52 env.sh
+oliverjeong@gordita:~/.local/bin$ env.sh -h
+-sh: env.sh: command not found
+oliverjeong@gordita:~/.local/bin$ ./env.sh -h
+Usage: source ./env.sh
+oliverjeong@gordita:~/.local/bin$ env.sh^C
+oliverjeong@gordita:~/.local/bin$ echo $PATH
+/usr/lib64/mpich/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/AnsysEM/AnsysEM15.0/Linux64/
+oliverjeong@gordita:~/.local/bin$ ./env.sh -h
+Usage: source ./env.sh
+oliverjeong@gordita:~/.local/bin$ source env.sh -h
+-sh: source: env.sh: file not found
+oliverjeong@gordita:~/.local/bin$ source ./env.sh -h
+source ./env.sh [-hl] [-v version] [-c channel] [-p prefix] --- load AnalysisBackend environments
+
+where:
+	-h	show this help message
+	-l	use legacy environment instead if specified. (e.g. on Cori, use hpcports.)
+	-v	python version. 2 or 3. Default: 2
+	-c	conda channel. e.g. intel, defaults. Default: defaults
+	-p	prefix of the name of environment. Default: ab
+oliverjeong@gordita:~/.local/bin$ source ./env.sh -l
+oliverjeong@gordita:~/.local/bin$ echo $PATH
+/usr/lib64/mpich/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/AnsysEM/AnsysEM15.0/Linux64/:/home/oliverjeong/AnalysisBackend/automated:/home/oliverjeong/AnalysisBackend/hdf5:/home/oliverjeong/AnalysisBackend/indexing:/home/oliverjeong/AnalysisBackend/misc:/home/oliverjeong/AnalysisBackend/unpack:/home/oliverjeong/AnalysisBackend/starcamera:/home/oliverjeong/AnalysisBackend/pointing:/home/oliverjeong/AnalysisBackend/calibration:/home/oliverjeong/AnalysisBackend/config:/home/oliverjeong/AnalysisBackend/datawiz:/home/oliverjeong/AnalysisBackend/deglitching:/home/oliverjeong/AnalysisBackend/mapping:/home/oliverjeong/AnalysisBackend/noise:/home/oliverjeong/AnalysisBackend/pipelet:/home/oliverjeong/AnalysisBackend/pywtl_modules:/home/oliverjeong/AnalysisBackend/quaternionarray:/home/oliverjeong/AnalysisBackend/resample:/home/oliverjeong/AnalysisBackend/simulation:/home/oliverjeong/AnalysisBackend/timestream:/home/oliverjeong/AnalysisBackend/unpack:/home/oliverjeong/AnalysisBackend/weather:/home/oliverjeong/AnalysisBackend/dataio:/home/oliverjeong/AnalysisBackend/automated:/home/oliverjeong/AnalysisBackend/powerspectrum:/home/oliverjeong/AnalysisBackend/calibration/visualization:/home/oliverjeong/AnalysisBackend/whwp
+oliverjeong@gordita:~/.local/bin$ cat ~/.bash_aliases
+cat: /home/oliverjeong/.bash_aliases: No such file or directory
+oliverjeong@gordita:~/.local/bin$ touch ~/.bash_aliases
+oliverjeong@gordita:~/.local/bin$ nano ~/.bash_aliases
+oliverjeong@gordita:~/.local/bin$ logout
+Connection to gordita.physics.berkeley.edu closed.
+Olivers-MacBook-Pro:~ objeong$ 

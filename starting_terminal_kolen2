@@ -1,0 +1,95 @@
+Last login: Fri Jul 21 15:19:21 on ttys000
+Olivers-MacBook-Pro:~ objeong$ ssh -Y oliverjeong@gordita.physics.berkeley.edu
+oliverjeong@gordita.physics.berkeley.edu's password: 
+Warning: No xauth data; using fake authentication data for X11 forwarding.
+Last login: Fri Jul 21 15:35:18 2017 from 10.142.100.209
+Welcome to gordita!
+
+Notable file systems:
+- /data/pb1 contains PB1 data
+- /scratch contains fast local scratch space (3TB worth)
+- /home Home directories. Please don't put a ton of data here. /home is backed up daily -- old data can be found at /home/.zfs/snapshot/date
+- /opt contains interesting software, notably in /opt/polarbear, which has python and useful python modules
+
+oliverjeong@gordita:~$ ls
+AnalysisBackend  analysis_data  examples.desktop
+oliverjeong@gordita:~$ ls -a
+.   AnalysisBackend  .bash_aliases  .bash_logout  .cache  examples.desktop  .mail_aliases  .profile  .shrc  .Xauthority
+..  analysis_data    .bash_history  .bashrc       .cshrc  .local            .mailrc        .rhosts   .ssh
+oliverjeong@gordita:~$ echo $PATH
+/usr/lib64/mpich/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/AnsysEM/AnsysEM15.0/Linux64/:/home/oliverjeong/AnalysisBackend/automated:/home/oliverjeong/AnalysisBackend/hdf5:/home/oliverjeong/AnalysisBackend/indexing:/home/oliverjeong/AnalysisBackend/misc:/home/oliverjeong/AnalysisBackend/unpack:/home/oliverjeong/AnalysisBackend/starcamera:/home/oliverjeong/AnalysisBackend/pointing:/home/oliverjeong/AnalysisBackend/calibration:/home/oliverjeong/AnalysisBackend/config:/home/oliverjeong/AnalysisBackend/datawiz:/home/oliverjeong/AnalysisBackend/deglitching:/home/oliverjeong/AnalysisBackend/mapping:/home/oliverjeong/AnalysisBackend/noise:/home/oliverjeong/AnalysisBackend/pipelet:/home/oliverjeong/AnalysisBackend/pywtl_modules:/home/oliverjeong/AnalysisBackend/quaternionarray:/home/oliverjeong/AnalysisBackend/resample:/home/oliverjeong/AnalysisBackend/simulation:/home/oliverjeong/AnalysisBackend/timestream:/home/oliverjeong/AnalysisBackend/unpack:/home/oliverjeong/AnalysisBackend/weather:/home/oliverjeong/AnalysisBackend/dataio:/home/oliverjeong/AnalysisBackend/automated:/home/oliverjeong/AnalysisBackend/powerspectrum:/home/oliverjeong/AnalysisBackend/calibration/visualization:/home/oliverjeong/AnalysisBackend/whwp
+oliverjeong@gordita:~$ top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+top - 16:35:49 up 10 days, 22:30, 10 users,  load average: 0.04, 0.06, 0.01
+Tasks: 953 total,   1 running, 952 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.0%us,  0.1%sy,  0.0%ni, 99.8%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:  264422904k total, 204312488k used, 60110416k free,   576312k buffers
+Swap:  4194300k total,    15348k used,  4178952k free, 198326812k cached
+
+    PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                               
+ 827777 ari       30  10 4435m 1.2g 151m S  2.6  0.5 327:50.50 hfss.exe                                                                               
+ 832882 asuzuki   20   0 5925m 1.0g 155m S  1.7  0.4 298:12.49 hfss.exe                                                                               
+ 834717 asuzuki   20   0 17780 2092 1028 S  1.0  0.0  74:02.60 top                                                                                    
+ 827600 ari       20   0  181m 6956 5028 S  0.7  0.0  15:24.98 icewm                                                                                  
+ 827804 ari       20   0 17788 2108 1028 S  0.7  0.0  71:33.10 top                                                                                    
+1456531 khcheung  20   0 17780 2100 1028 S  0.7  0.0   0:02.14 top                                                                                    
+1456541 oliverje  20   0 17800 2092 1028 R  0.7  0.0   0:01.98 top                                                                                    
+ 832652 asuzuki   20   0  325m  45m 7160 S  0.3  0.0   8:16.15 Xvnc                                                                                   
+      1 root      20   0 21452 1376 1196 S  0.0  0.0   0:44.80 init                                                                                   
+      2 root      20   0     0    0    0 S  0.0  0.0   0:00.77 kthreadd                                                                               
+      3 root      RT   0     0    0    0 S  0.0  0.0  23:36.70 migration/0                                                                            
+      4 root      20   0     0    0    0 S  0.0  0.0   0:09.70 ksoftirqd/0                                                                            
+      5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/0                                                                              
+      6 root      RT   0     0    0    0 S  0.0  0.0   0:21.35 watchdog/0                                                                             
+      7 root      RT   0     0    0    0 S  0.0  0.0  10:53.37 migration/1                                                                            
+      8 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/1                                                                              
+      9 root      20   0     0    0    0 S  0.0  0.0   0:05.98 ksoftirqd/1                                                                            
+     10 root      RT   0     0    0    0 S  0.0  0.0   0:44.20 watchdog/1                                                                             
+     11 root      RT   0     0    0    0 S  0.0  0.0  10:23.58 migration/2                                                                            
+     12 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/2                                                                              
+     13 root      20   0     0    0    0 S  0.0  0.0   0:10.43 ksoftirqd/2                                                                            
+     14 root      RT   0     0    0    0 S  0.0  0.0   0:39.59 watchdog/2                                                                             
+     15 root      RT   0     0    0    0 S  0.0  0.0   9:19.41 migration/3                                                                            
+     16 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/3                                                                              
+     17 root      20   0     0    0    0 S  0.0  0.0   0:06.17 ksoftirqd/3                                                                            
+     18 root      RT   0     0    0    0 S  0.0  0.0   0:39.17 watchdog/3                                                                             
+     19 root      RT   0     0    0    0 S  0.0  0.0   9:04.38 migration/4                                                                            
+     20 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/4                                                                              
+     21 root      20   0     0    0    0 S  0.0  0.0   0:03.71 ksoftirqd/4                                                                            
+     22 root      RT   0     0    0    0 S  0.0  0.0   0:41.24 watchdog/4                                                                             
+     23 root      RT   0     0    0    0 S  0.0  0.0   8:46.03 migration/5                                                                            
+     24 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/5                                                                              
+     25 root      20   0     0    0    0 S  0.0  0.0   0:07.35 ksoftirqd/5                                                                            
+     26 root      RT   0     0    0    0 S  0.0  0.0   0:34.69 watchdog/5                                                                             
+     27 root      RT   0     0    0    0 S  0.0  0.0   8:24.36 migration/6                                                                            
+     28 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/6                                                                              
+     29 root      20   0     0    0    0 S  0.0  0.0   0:06.16 ksoftirqd/6                                                                            
+     30 root      RT   0     0    0    0 S  0.0  0.0   0:36.25 watchdog/6                                                                             
+     31 root      RT   0     0    0    0 S  0.0  0.0   8:21.56 migration/7                                                                            
+     32 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/7                                                                              
+     33 root      20   0     0    0    0 S  0.0  0.0   0:04.02 ksoftirqd/7                                                                            
+     34 root      RT   0     0    0    0 S  0.0  0.0   0:31.23 watchdog/7                                                                             
+     35 root      RT   0     0    0    0 S  0.0  0.0   8:01.59 migration/8                                                                            
+oliverjeong@gordita:~$ logout
+Connection to gordita.physics.berkeley.edu closed.
+Olivers-MacBook-Pro:~ objeong$ 
