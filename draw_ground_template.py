@@ -1,15 +1,12 @@
-#!/usr/bin/env python2.7
+#!/opt/polarbear/bin/python
 import h5py
 import numpy as np
 import matplotlib
-matplotlib.use('Agg')
+#matplotlib.use('Agg')
 import healpy as hp
 import pickle
 import sys
 from matplotlib.pyplot import *
-import os
-
-#basedir = "$SCRATCH/ground_map/coadd"
 
 def clip(array, mask):
 	array[np.logical_not(mask)] = np.nan
@@ -19,7 +16,6 @@ def clip(array, mask):
 
 #Load the file
 print('Loading the file.')
-#os.chdir(basedir)
 f = h5py.File(sys.argv[1], 'r')
 mapinfo = pickle.loads(f.attrs['mapinfo'])
 
@@ -155,4 +151,4 @@ ylabel('Elevation, $^circ$')
 colorbar()
 savefig('w4_gt_%s.png'%sys.argv[2])
 
-#show()
+show()
