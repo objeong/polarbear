@@ -7,6 +7,7 @@ import healpy as hp
 import pickle
 import sys
 from matplotlib.pyplot import *
+from matplotlib.cm import *
 
 def clip(array, mask):
 	array[np.logical_not(mask)] = np.nan
@@ -100,6 +101,7 @@ title('Ground template I, $\mu K_{CMB}$')
 xlabel('Azimuth, $^circ$')
 ylabel('Elevation, $^circ$')
 colorbar()
+clim(vmin=-1900, vmax=2000)
 savefig('I_gt_%s.png'%sys.argv[2])
 
 figure()
@@ -108,6 +110,7 @@ title('Ground template Q, $\mu K_{CMB}$')
 xlabel('Azimuth, $^circ$')
 ylabel('Elevation, $^circ$')
 colorbar()
+clim(vmin=-120, vmax=300)
 savefig('Q_gt_%s.png'%sys.argv[2])
 
 figure()
@@ -116,6 +119,7 @@ title('Ground template U, $\mu K_{CMB}$')
 xlabel('Azimuth, $^circ$')
 ylabel('Elevation, $^circ$')
 colorbar()
+clim(vmin=-260, vmax=420)
 savefig('U_gt_%s.png'%sys.argv[2])
 
 figure()
@@ -125,6 +129,7 @@ xlabel('Azimuth, $^\circ$')
 ylabel('Elevation, $^\circ$')
 gca().grid(True)
 colorbar()
+clim(vmin=0, vmax=600)
 savefig('Mag_gt_%s.png'%sys.argv[2])
 
 figure()
@@ -133,6 +138,7 @@ title('Ground template Polarized Phase')
 xlabel('Azimuth, $^circ$')
 ylabel('Elevation, $^circ$')
 colorbar()
+clim(vmin=-2.8, vmax=2.8)
 savefig('Arg_gt_%s.png'%sys.argv[2])
 
 figure()
@@ -141,6 +147,7 @@ title('Ground template 0f weight')
 xlabel('Azimuth, $^circ$')
 ylabel('Elevation, $^circ$')
 colorbar()
+clim(vmin=0, vmax=3.7e14)
 savefig('w0_gt_%s.png'%sys.argv[2])
 
 figure()
@@ -149,6 +156,7 @@ title('Ground template 4f weight')
 xlabel('Azimuth, $^circ$')
 ylabel('Elevation, $^circ$')
 colorbar()
+clim(vmin=0, vmax=6.7e15)
 savefig('w4_gt_%s.png'%sys.argv[2])
 
 show()
