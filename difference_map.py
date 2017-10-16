@@ -22,6 +22,28 @@ mapinfo1 = pickle.loads(f1.attrs['mapinfo'])
 f2 = h5py.File(sys.argv[2], 'r')
 mapinfo2 = pickle.loads(f2.attrs['mapinfo'])
 
+print('Instantiating arrays')
+npix1 = hp.nside2npix(mapinfo1.nside)
+map_I_1 = np.empty((npix1))
+map_Q_1 = np.empty((npix1))
+map_U_1 = np.empty((npix1))
+map_w0_1 = np.zeros((npix1))
+map_w4_1 = np.zeros((npix1))
+map_I_1[:] = np.nan
+map_Q_1[:] = np.nan
+map_U_1[:] = np.nan
+
+print('Instantiating arrays')
+npix2 = hp.nside2npix(mapinfo2.nside)
+map_I_2 = np.empty((npix2))
+map_Q_2 = np.empty((npix2))
+map_U_2 = np.empty((npix2))
+map_w0_2 = np.zeros((npix2))
+map_w4_2 = np.zeros((npix2))
+map_I_2[:] = np.nan
+map_Q_2[:] = np.nan
+map_U_2[:] = np.nan
+
 #file I/O
 print('Creating Maps')
 obspix1 = mapinfo1.obspix
@@ -199,3 +221,4 @@ colorbar()
 savefig('dw4_gt_%s.png'%sys.argv[3])
 
 show()
+
